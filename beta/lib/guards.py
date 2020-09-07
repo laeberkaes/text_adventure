@@ -27,7 +27,7 @@ class BridgeGuard:
         elif answ == "2" and (random.random() > (0.5 + (0.1 * player.level) - player.friendly + (player.charisma / 10))):
             speech_manipulation("Am I looking like a joke to you?\n", 0.04)
             fight_setup(player, [1, 0, 0])
-            player.friendly += 0.1
+            player.karma -= 0.2
         elif answ == "2":
             speech_manipulation("Okay I see you have some serious trouble yourself. I will give you a riddle and you "
                                 "can solve this instead of paying the price.\n", 0.05)
@@ -35,7 +35,7 @@ class BridgeGuard:
         elif answ == "3" and (random.random() > (0.2 + (0.1 * player.level) - player.friendly + (player.strength / 10))):
             speech_manipulation("Well. It doesn't seem you know whom you are talking to?\n", 0.05)
             fight_setup(player, [1, 0, 0])
-            player.friendly += 0.1
+            player.karma -= 0.2
         elif answ == "3":
             speech_manipulation(
                 "Okay, okay. You don't have to get mad. Go over there .. but don't come back quickly.\n", 0.04)

@@ -35,14 +35,14 @@ class Player:
         self.armor = 0
         self.pos = (0.95, 0.05, 0)
         self.quests = []
-        self.friendly = 0.0
 
-        self.strength = 0
-        self.dexterity = 0
-        self.constitution = 0
-        self.intelligence = 0
-        self.wisdom = 0
-        self.charisma = 0
+        self.karma = 0.0
+        self.strength = 0.0
+        self.dexterity = 0.0
+        self.constitution = 0.0
+        self.intelligence = 0.0
+        self.wisdom = 0.0
+        self.charisma = 0.0
 
     # HUD-Optionen --------------------------------------------------------
     def health_mana(self):
@@ -202,10 +202,42 @@ class Player:
         speech_manipulation(
             "Congratulations, you leveled up. You are now a level " + str(self.level) + " " + self.play_class + ".\n",
             0.03)
-        speech_manipulation("You have " + str(self.health_max) + " max HP and " + str(self.mp_cur_max[1])+ " max MP.", 0.03)
+        speech_manipulation("You have " + str(self.health_max) + " max HP and " + str(self.mp_cur_max[1])+ " max MP.\n", 0.03)
+        if self.level % 2 == 0:
+            print("You can distribute 2 points on your character traits.")
+            print("Which traits do you want to upgrade? ('strength', 'dexterity', 'constitution', 'intelligence', "
+                  "'wisdom', 'charisma')")
+            traits = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']
+            first = input("1: ")
+            while first not in traits:
+                print("This trait was not recognised.")
+                first = input("1: ")
+            second = input("2: ")
+            while second not in traits:
+                print("This trait was not recognised.")
+                second = input("2: ")
+            self.upgrade_trait(first.lower())
+            self.upgrade_trait(second.lower())
+
         time.sleep(2)
         while self.ep > 100:
             self.level_up()
+
+    def upgrade_trait(self, trait):
+        if trait == "strength":
+            self.strength += .1
+        elif trait == "dexterity":
+            self.dexterity += .1
+        elif trait == "constitution":
+            self.constitution += .1
+        elif trait == "intelligence":
+            self.intelligence += .1
+        elif trait == "wisdom":
+            self.wisdom += .1
+        elif trait == "charisma":
+            self.charisma += .1
+
+        print("Your " + trait + " was upgraded by one point.")
 
     # Waffen-Optionen --------------------------------------------------------
     def get_weapon(self, weapon, p=True):

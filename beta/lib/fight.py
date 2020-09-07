@@ -21,6 +21,7 @@ def fight_setup(player, poss):
         enemy = Orc()
     else:
         enemy = Giant()  # else, solange nur 3 mögliche Gegner
+    player.karma += .1
     fight(player, enemy, zonemap)
 
 

@@ -290,12 +290,13 @@ def setup_game():
         myPlayer.mp_cur_max.append(20)
         myPlayer.mp_cur_max.append(20)
 
-        myPlayer.strength = 3
-        myPlayer.dexterity = -1
-        myPlayer.constitution = 2
-        myPlayer.intelligence = 0
-        myPlayer.wisdom = 1
-        myPlayer.charisma = 2
+        myPlayer.karma = 1.0
+        myPlayer.strength = 0.3
+        myPlayer.dexterity = -0.1
+        myPlayer.constitution = 0.2
+        myPlayer.intelligence = 0.0
+        myPlayer.wisdom = 0.1
+        myPlayer.charisma = 0.2
     elif myPlayer.play_class == "mage":
         print_mage()
         time.sleep(2)
@@ -304,12 +305,13 @@ def setup_game():
         myPlayer.mp_cur_max.append(80)
         myPlayer.mp_cur_max.append(80)
 
-        myPlayer.strength = 0
-        myPlayer.dexterity = 2
-        myPlayer.constitution = 2
-        myPlayer.intelligence = 3
-        myPlayer.wisdom = 1
-        myPlayer.charisma = -1
+        myPlayer.karma = 1.0
+        myPlayer.strength = 0.0
+        myPlayer.dexterity = 0.2
+        myPlayer.constitution = 0.2
+        myPlayer.intelligence = 0.3
+        myPlayer.wisdom = 0.1
+        myPlayer.charisma = -0.1
     elif myPlayer.play_class == "rogue":
         print_rogue()
         time.sleep(2)
@@ -318,12 +320,13 @@ def setup_game():
         myPlayer.mp_cur_max.append(40)
         myPlayer.mp_cur_max.append(40)
 
-        myPlayer.strength = -1
-        myPlayer.dexterity = 3
-        myPlayer.constitution = 1
-        myPlayer.intelligence = 1
-        myPlayer.wisdom = 0
-        myPlayer.charisma = 3
+        myPlayer.karma = 1.0
+        myPlayer.strength = -0.1
+        myPlayer.dexterity = 0.3
+        myPlayer.constitution = 0.1
+        myPlayer.intelligence = 0.1
+        myPlayer.wisdom = 0.0
+        myPlayer.charisma = 0.3
     elif myPlayer.play_class == "debug":
         myPlayer.health_max = 1000
         myPlayer.health_cur = 1000
@@ -331,6 +334,15 @@ def setup_game():
         myPlayer.mp_cur_max.append(400)
         myPlayer.level = 10
         myPlayer.gold = 10000
+
+        myPlayer.karma = 1.0
+        myPlayer.strength = -0.1
+        myPlayer.dexterity = 0.3
+        myPlayer.constitution = 0.1
+        myPlayer.intelligence = 0.1
+        myPlayer.wisdom = 0.0
+        myPlayer.charisma = 0.3
+
         for i in range(3):
             myPlayer.spells.append(Spell(myPlayer))
         myPlayer.weapon = game_object.Weapon(10)
