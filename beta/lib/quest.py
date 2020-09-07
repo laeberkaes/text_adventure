@@ -1,5 +1,5 @@
 class Quest():
-    def __init__(self, name, , description, goals=1, gold=0, ep=0, potion=0, origin="b2", equipment=...):
+    def __init__(self, name, description, goals=1, gold=0, ep=0, potion=0, origin="b2", equipment=...):
         self.quest_name = name
         self.quest_description = description
         self.tag = [", active", ", done"]
