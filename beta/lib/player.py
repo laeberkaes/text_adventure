@@ -37,6 +37,13 @@ class Player:
         self.quests = []
         self.friendly = 0.0
 
+        self.strength = 0
+        self.dexterity = 0
+        self.constitution = 0
+        self.intelligence = 0
+        self.wisdom = 0
+        self.charisma = 0
+
     # HUD-Optionen --------------------------------------------------------
     def health_mana(self):
         """
